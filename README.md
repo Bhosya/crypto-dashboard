@@ -1,47 +1,85 @@
-# Svelte + Vite
+# Crypto Dashboard 🚀
 
-This template should help get you started developing with Svelte in Vite.
+Crypto Dashboard adalah proyek berbasis **Svelte** yang memungkinkan pengguna untuk melihat harga **Bitcoin & Ethereum** secara real-time dalam bentuk grafik interaktif. Data harga diperbarui otomatis setiap **10 detik** menggunakan API dari **CoinGecko**.
 
-## Recommended IDE Setup
+Proyek ini dibuat untuk membantu orang awam dalam **memantau harga crypto** dengan cara yang simpel dan mudah digunakan. Tidak perlu keahlian teknis tinggi, cukup ikuti langkah-langkah di bawah ini! ✅
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+---
 
-## Need an official Svelte framework?
+## 🎯 Fitur
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- ✅ **Menampilkan harga Bitcoin & Ethereum secara real-time** 📊  
+- ✅ **Grafik harga yang interaktif** dengan Chart.js 📈  
+- ✅ **Update harga otomatis setiap 10 detik** 🔄  
+- ✅ **Desain responsif**, bisa digunakan di HP maupun PC 📱💻  
 
-## Technical considerations
+---
 
-**Why use this over SvelteKit?**
+## 📥 Instalasi & Menjalankan Proyek
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+### 1️⃣ **Pastikan Sudah Terinstall Node.js**
+Sebelum mulai, pastikan di laptop/PC kamu sudah ada **Node.js**. Cek dengan perintah ini:
+```sh
+node -v
 ```
+Jika belum ada, download dan install dari [sini](https://nodejs.org/).
+
+---
+
+### 2️⃣ **Clone Repo ini**
+```sh
+git clone https://github.com/username/svelte-crypto-dashboard.git
+```
+Ganti `username` dengan akun GitHub-mu. 
+
+Lalu masuk ke folder proyek:
+```sh
+cd svelte-crypto-dashboard
+```
+
+---
+
+### 3️⃣ **Install Dependencies**
+Kita akan menggunakan **Vite** sebagai bundler proyek. Install semua package yang diperlukan dengan:
+```sh
+npm install
+```
+
+---
+
+### 4️⃣ **Menjalankan Aplikasi**
+Setelah semua terinstall, jalankan server dengan perintah:
+```sh
+npm run dev
+```
+
+Akan muncul output seperti ini:
+```
+Local: http://localhost:5173/
+```
+Buka **[http://localhost:5173/](http://localhost:5173/)** di browser untuk melihat Crypto Dashboard! 🎉
+
+---
+
+## 🛠️ Cara Kerja Aplikasi
+
+### 💡 1. Mengambil Data Harga Crypto
+Kita mengambil harga Bitcoin & Ethereum dari **CoinGecko API** di file `src/lib/api.js`.
+
+### 💡 2. Menyimpan Data di Store
+Kita menggunakan **Svelte Store (`writable`)** untuk menyimpan data harga agar bisa digunakan di seluruh komponen.
+
+### 💡 3. Menampilkan Data dalam Grafik
+Kita menggunakan **Chart.js** untuk membuat grafik harga yang interaktif di file `CryptoChart.svelte`.
+
+### 💡 4. Update Otomatis Setiap 10 Detik
+Menggunakan `setInterval()`, aplikasi akan mengambil data terbaru setiap **10 detik**.
+
+---
+
+## 📌 Kontributor
+Jika ingin berkontribusi, silakan fork repo ini dan buat **pull request**! Semua bentuk kontribusi sangat diapresiasi. 😊
+
+Jika ada pertanyaan atau masukan, jangan ragu untuk **buka issue** atau hubungi saya di GitHub.
+
+**Selamat Coding! 🚀🔥**
